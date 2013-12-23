@@ -11,6 +11,8 @@
 <p><!--%= link_to 'perfil', current_user %--></p>
 
 <% else %>
-<%= link_to "Sign up", new_user_registration_path %> |
-<%= link_to "Sign in", new_user_session_path %> |
+<%= link_to "Regístrate!", new_user_registration_path %>
+Si aun no tienes cuenta | o
+<%= link_to "Inicia Sesión", new_user_session_path %> 
+Para acceder a tu cuenta M-MIX! |
 <% end %>
