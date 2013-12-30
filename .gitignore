@@ -1,1 +1,4 @@
-app/tmp/cache/*
+# ---- MMIX -----
+
+tmp/cache/*
+log/development.log
