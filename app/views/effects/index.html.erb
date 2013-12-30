@@ -1,0 +1,32 @@
+<h1>Lista de efectos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Comentario</th>
+    <th>Propietario</th>
+  </tr>
+
+<% @effects.each do |effect| %>
+  <tr>
+    <!--td><%= link_to 'Show', effect %></td-->
+	<td><%= effect.title %></td>
+    <td><%= effect.content %></td>
+    <td><%= link_to effect.user.email, user_path(effect.user) %></td>
+  	<td><%= link_to 'Ver', effect %></td>
+	<% if user_signed_in? and current_user == effect.user %>
+    	<td><%= link_to 'Editar', edit_effect_path(effect) %></td>
+ 	    <td><%= link_to 'Eliminar', effect, confirm: 'Seguro?', method: :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if user_signed_in? %>
+	<%= link_to 'New Effect', new_effect_path %> |
+	<%= link_to 'ppal', root_path %>
+<% else %>
+	<%= link_to 'ppal', root_path %>
+<% end %>

@@ -1,0 +1,25 @@
+<h1>Perfil de Usuario</h1>
+<!--p>Find me in app/views/users/show.html.erb</p-->
+	<%= link_to 'efectos', effects_path %> |
+    <%= link_to 'ppal', ppal_index_path %>
+<hr>
+	<h2>Informacion de usuario</h2>
+	<tr>
+		<br><br>
+		<td><%= @user.email %></td><br>
+		<td><%= @user.about %></td><br>
+    </tr>
+<% if user_signed_in? and current_user == @user %>
+	<%= link_to 'Editar perfil', edit_user_registration_path %>
+<% end %>
+
+<h2> Efectos subidos </h2>
+	<% @effects.each do |effect| %>
+	<tr>
+		<td><%= effect.title %></td><br>
+		<td><%= effect.content %></td><br>
+		<td><%= effect.created_at %></td><br>
+		<td><%= effect.updated_at %></td><br><br>
+    </tr>
+	<% end %>
+

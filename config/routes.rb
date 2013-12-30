@@ -1,10 +1,17 @@
 MMixProject::Application.routes.draw do
 
+  resources :effects
+
  devise_for :users do
 
  	get "/", :to => "ppal#index"
 
 end
+
+	devise_for :users
+	resources :users, only: [:show, :index] do
+    	resources :posts
+	end
 
 root :to => 'ppal#index'
 
