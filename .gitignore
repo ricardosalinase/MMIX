@@ -1,4 +1,5 @@
 # ---- MMIX -----
 
+tmp/cache/assets/*
 tmp/cache/*
 log/development.log
