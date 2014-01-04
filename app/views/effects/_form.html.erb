@@ -1,15 +1,19 @@
-<%= simple_form_for(@effect) do |f| %>
+<%= simple_form_for @effect, :html => {:multipart => true} do |f| %>
 	<div class="field">
 
     	<%= f.input :title %>
 	</div>
 	<div class="field">
 
-		<%= f.input :content %>
+		<%= f.input :content, :input_html => {:size => "30x3"} %>
+	</div>
+
+	<div class="file_field">
+		<%= f.file_field :efx %>  
 	</div>
 
 	<div class="actions">
-		<%= f.button :submit %>
+		<%= f.submit :subir %>
 	</div>
 
 <% end %>
