@@ -6,6 +6,6 @@ class UserController < ApplicationController
 
 	def show
 	    @user = User.find(params[:id])
-		@effects = Effects.where(:user_id => @user.id).order("updated_at desc")
+		@effects = Effect.where(:user_id => @user.id).order("updated_at desc")
 	end
 end
