@@ -15,6 +15,11 @@
     <%= @effect.user_id %>
 </p>
 
+ <p>
+<b>efx:</b>
+   <%= link_to 'Escuchar', "#{@effect.efx}" %> 
+</p>
+
 <% if user_signed_in? and current_user == @effect.user%>
 	<%= link_to 'Editar', edit_effect_path(@effect) %> |
 <% end %>
