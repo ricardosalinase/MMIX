@@ -7,8 +7,11 @@
 		<%= select("genre", "genre_id", Genre.find(:all).collect {|p| [ p.title, p.id ] }, {:prompt => 'Estilo'})   %>
 	</div>
 
+	<div class="file_field">
+		<%= f.file_field :tracks %>  
+	</div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :subir%>
   </div>
 <% end %>

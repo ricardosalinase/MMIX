@@ -4,3 +4,4 @@ tmp/cache/assets/*
 tmp/cache/*
 log/development.log
 public/upload/effects/*
+public/upload/tracks/*

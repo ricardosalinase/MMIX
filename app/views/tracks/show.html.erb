@@ -1,5 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Title:</b>
+    <%= @track.title %>
+</p>
 
-<%= link_to 'Edit', edit_track_path(@track) %> |
-<%= link_to 'Back', tracks_path %>
+<p>
+  <b>Estilo:</b>
+    <%= @track.genre.title %>
+</p>
+
+<p>
+  <b>Propietario</b>
+    <%= @track.user.email %>
+</p>
+
+<p>
+<b>Pista:</b>
+   <%= link_to 'Escuchar', "#{@track.tracks}" %> |
+</p> 
+
+<% if user_signed_in? and current_user == @track.user%>
+	<%= link_to 'Editar', edit_track_path(@track) %> |
+<% end %>
+	<%= link_to 'Back', tracks_path %>
+
+
