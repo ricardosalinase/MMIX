@@ -22,6 +22,11 @@ class EffectsController < ApplicationController
     end
   end
 
+  def download
+      @effect = Effect.find(params[:id])
+	  send_file @effect.efx, :type=>"audio/mp3", :disposition => :attachment
+  end
+
   # GET /effects/new
   # GET /effects/new.json
   def new

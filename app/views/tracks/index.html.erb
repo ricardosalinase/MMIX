@@ -1,0 +1,31 @@
+<h1>Últimas pistas agregadas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Estilo</th>
+    <th>Propietario</th>
+  </tr>
+
+<% @tracks.each do |track| %>
+  <tr>
+	<!--td><%= link_to 'Show', track %></td-->
+	<td><%= track.title %></td>
+	<td><%= track.genre.title %></td>
+	<td><%= link_to track.user.email, user_path(track.user) %></td>
+	<td><%= link_to 'Ver', track %></td>
+    <% if user_signed_in? and current_user == track.user %>
+         <td><%= link_to 'Editar', edit_track_path(track) %></td>
+         <td><%= link_to 'Eliminar', track, confirm: 'Seguro?', method: :delete %></td>
+    <% end %>
+<% end %>
+</table>
+
+<br />
+
+<% if user_signed_in? %>
+	<%= link_to 'Subir pista nueva', new_track_path %> |
+	<%= link_to 'home', root_path %>
+<% else %>
+    <%= link_to 'home', root_path %>
+<% end %>

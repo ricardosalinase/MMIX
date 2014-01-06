@@ -1,12 +1,20 @@
 MMixProject::Application.routes.draw do
 
+  resources :tracks
+
+  resources :genres
+
   resources :effects
 
- devise_for :users do
+  resources :effects do
+    member do
+	    get :download
+    end
+  end
 
- 	get "/", :to => "ppal#index"
-
-end
+  devise_for :users do
+	get "/", :to => "ppal#index"
+  end
 
 	devise_for :users
 	resources :users, only: [:show, :index] do

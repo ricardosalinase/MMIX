@@ -17,7 +17,8 @@
 
  <p>
 <b>efx:</b>
-   <%= link_to 'Escuchar', "#{@effect.efx}" %> 
+   <%= link_to 'Escuchar', "#{@effect.efx}" %> |
+   <%= link_to "Descargar", :action =>'download', :controller =>'effects',:id => @effect %>
 </p>
 
 <% if user_signed_in? and current_user == @effect.user%>

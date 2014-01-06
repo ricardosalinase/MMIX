@@ -1,0 +1,14 @@
+<%= simple_form_for(@track) do |f| %>
+  	<div class="field">
+    	<%= f.input :title %>
+	</div>
+
+	<div class="field">
+		<%= select("genre", "genre_id", Genre.find(:all).collect {|p| [ p.title, p.id ] }, {:prompt => 'Estilo'})   %>
+	</div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

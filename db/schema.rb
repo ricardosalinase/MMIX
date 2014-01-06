@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140104041616) do
+ActiveRecord::Schema.define(:version => 20140105220639) do
 
   create_table "effects", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(:version => 20140104041616) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "efx"
+  end
+
+  create_table "genres", :force => true do |t|
+    t.string "title"
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "genre_id"
+    t.string   "title"
+    t.string   "autor"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
