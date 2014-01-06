@@ -1,5 +1,5 @@
 <h1>Lista de efectos</h1>
-
+<div class="CSSTableGenerator" >
 <table>
   <tr>
     <th>Nombre</th>
@@ -21,12 +21,12 @@
   </tr>
 <% end %>
 </table>
-
 <br />
-
+</div>
 <% if user_signed_in? %>
 	<%= link_to 'Subir efecto nuevo', new_effect_path %> |
 	<%= link_to 'home', root_path %>
 <% else %>
 	<%= link_to 'home', root_path %>
 <% end %>
+
