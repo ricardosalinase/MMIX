@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140106045037) do
+ActiveRecord::Schema.define(:version => 20140106055851) do
 
   create_table "effects", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(:version => 20140106045037) do
 
   create_table "genres", :force => true do |t|
     t.string "title"
+  end
+
+  create_table "tournaments", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tracks", :force => true do |t|

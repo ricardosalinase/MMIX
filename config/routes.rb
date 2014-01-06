@@ -1,5 +1,7 @@
 MMixProject::Application.routes.draw do
 
+  resources :tournaments
+
   resources :tracks
 
   resources :genres
